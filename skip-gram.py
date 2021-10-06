@@ -1,5 +1,3 @@
-from __future__ import absolute_import
-
 import numpy as np
 import pandas as pd
 import tensorflow as tf
@@ -9,7 +7,10 @@ import matplotlib.pyplot as plt
 from sklearn.manifold import TSNE
 
 
-class SkipGram():
+class SkipGram:
+    """
+    A class used to convert each word from a corpus to the corresponding numerical embedding vector using word2vec (skip-gram) model
+    """
     def __init__(self):
         self.file_path = '*.txt'
         self.vocab_size = 1000
@@ -48,7 +49,6 @@ class SkipGram():
         """
         top_words = [w for w, count in self.word_counts[:self.vocab_size-1]] + ['<UNK>']  # UNK for infrequent words
         self.word2idx = {w: i for i, w in enumerate(top_words)}
-        # print('\n word_index dictionary:', self.word2idx)
         return self.word2idx
 
     def _sent2idx(self):
@@ -72,7 +72,7 @@ class SkipGram():
             word_freq[word] += 1
 
         # Smooth it
-        self.p_neg = word_freq**0.75
+        self.p_neg = word_freq ** 0.75
         
         # Normalize it
         self.p_neg = self.p_neg / self.p_neg.sum()
@@ -182,6 +182,9 @@ class SkipGram():
         return self.embedding_dict
 
     def tsne(self):
+        """
+        Create two_dimensional T-distributed Stochastic Neighbor Embedding (t-SNE) plot from word embeddings
+        """
         idx2word = {idx:word for idx, word in enumerate(self.word2idx)}
         tsne = TSNE()
         Z = tsne.fit_transform(self.W1.numpy())
