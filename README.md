@@ -31,7 +31,9 @@ Clone this repo to your local machine using https://github.com/farhad-faghihi/sk
 ## Run
 
 In a terminal or command window, navigate to the top-level project directory skip-gram/ and run the following commands:
-python skip-gram.py
+$ conda env create -f environment.yml
+$ conda activate skip-gram
+$ python main.py
 
 ## Data
 
