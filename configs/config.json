@@ -1,0 +1,13 @@
+{
+    "preprocess": {
+        "vocab_size": 1000
+    },
+    
+    "skip_gram": {
+        "context_size": 5,
+        "num_negatives": 5,
+        "learning_rate": 0.0001,
+        "num_epochs": 10,
+        "max_embedding_size": 300
+    }
+}
