@@ -15,14 +15,14 @@ conda 4.8
 
 ## Installing the environment
 
-To create the virtual environment run the following command:
-conda env create -f environment.yml
+To create the virtual environment run the following command:\
+$ conda env create -f environment.yml
 
-Activate the new environment: 
-conda activate myenv
+Verify that the new environment was installed correctly. You should see skip-gram in the environment list:\
+$ conda env list
 
-Verify that the new environment was installed correctly:
-conda env list
+Activate the new environment:\
+$ conda activate skip-gram
 
 ## Clone
 
@@ -30,8 +30,7 @@ Clone this repo to your local machine using https://github.com/farhad-faghihi/sk
 
 ## Run
 
-In a terminal or command window, navigate to the top-level project directory skip-gram/ and run the following commands:
-
+In a terminal or command window, navigate to the top-level project directory skip-gram/ and run the following commands:\
 $ python main.py
 
 ## Data
